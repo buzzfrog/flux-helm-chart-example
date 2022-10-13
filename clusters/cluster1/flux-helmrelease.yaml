@@ -4,7 +4,7 @@ metadata:
   name: app1-helmrelease
   namespace: app1-ns
 spec:
-  releaseName: optifact-iam-ossi
+  releaseName: app1-v1
   targetNamespace: apps
   chart:
     spec:
@@ -23,6 +23,4 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: app1-config-values
-      valuesKey: values-override.yaml
-      optional: true
    

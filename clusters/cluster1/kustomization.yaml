@@ -9,7 +9,7 @@ namespace: app1-ns
 
 configMapGenerator:
   - name: app1-config-values
-    namespace: app1-ns
-    behavior: create
     files:
-      - values-override.yaml
+      - values.yaml=values-override.yaml
+configurations:
+  - kustomizeconfig.yaml
