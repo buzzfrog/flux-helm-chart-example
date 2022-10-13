@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: git-buzzfrog
+  namespace: default
+spec:
+  interval: 30s
+  url: https://github.com/buzzfrog/flux-helm-chart-example
+  ref:
+    branch: main

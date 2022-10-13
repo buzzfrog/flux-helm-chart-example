@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: app1-helmrelease
+  namespace: app1-ns
+spec:
+  releaseName: optifact-iam-ossi
+  targetNamespace: apps
+  chart:
+    spec:
+      chart: ../../apps/app1
+      sourceRef:
+        kind: GitRepository
+        name: git-buzzfrog
+        namespace: default
+  interval: 30s
+  upgrade:
+    force: true
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  valuesFrom:
+    - kind: ConfigMap
+      name: app1-config-values
+      valuesKey: values-override.yaml
+      optional: true
+   

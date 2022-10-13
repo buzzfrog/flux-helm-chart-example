@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+  labels:
+    app: app1
+spec:
+  replicas: {{ .Values.replica }}
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      labels:
+        app: app1
+    spec:
+      containers:
+      - name: app1
+        image: {{ .Values.image }}
+        env:
+        - name: MQTT_SERVER
+          value: {{ .Values.env.MqttServer }}
+        - name: MQTT_PORT
+          value: {{ .Values.env.MqttPort }}
+     volumes:
+      - name: config
+        configMap:
+          name: config-configmap
