@@ -5,6 +5,6 @@ kind create cluster
 
 flux install
 
-kubectl apply -f flux-gitrepository.yaml
-kubectl apply -f flux-kustomization.yaml
+kubectl apply -f ./manifests/flux-gitrepository.yaml
+kubectl apply -f ./manifests/flux-kustomization.yaml
 
