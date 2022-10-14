@@ -19,9 +19,9 @@ spec:
         image: {{ .Values.image }}
         env:
         - name: MQTT_SERVER
-          value: {{ .Values.env.MqttServer }}
+          value: mosquitto.mosquitto.svc.cluster.local
         - name: MQTT_PORT
-          value: {{ .Values.env.MqttPort }}
+          value: 1883
         volumeMounts:
         - mountPath: /etc/daytona
           name: app1-config
