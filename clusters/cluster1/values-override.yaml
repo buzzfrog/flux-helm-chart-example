@@ -7,5 +7,5 @@ config:
   host:
   environment:
   application: moonshot-sample 
-  version: "1.1"
+  version: "1.2"
   module: input
