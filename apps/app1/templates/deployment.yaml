@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
       - name: app1-container
-        image: busybox:latest
+        image: "{{ .Values.image }}"
         env:
         - name: MQTT_SERVER
-          value: "mosquitto.mosquitto.svc.cluster.local"
+          value: "{{ .Values.env.MqttServer }}"
         - name: MQTT_PORT
           value: "{{ .Values.env.MqttPort }}"
         command:
