@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1
+  name: app1-deployment
   labels:
     app: app1
 spec:
@@ -15,14 +15,17 @@ spec:
         app: app1
     spec:
       containers:
-      - name: app1
+      - name: app1-container
         image: {{ .Values.image }}
         env:
         - name: MQTT_SERVER
           value: {{ .Values.env.MqttServer }}
         - name: MQTT_PORT
           value: {{ .Values.env.MqttPort }}
-     volumes:
-      - name: config
+        volumeMounts:
+        - mountPath: /etc/daytona
+          name: app1-config
+      volumes:
+      - name: app1-config
         configMap:
           name: config-configmap

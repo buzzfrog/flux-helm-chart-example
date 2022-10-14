@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: input-config-configmap
+  name: config-configmap
 data:
   config: |
     {
