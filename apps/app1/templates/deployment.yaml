@@ -5,7 +5,7 @@ metadata:
   labels:
     app: app1
 spec:
-  replicas: {{ .Values.replica }}
+  replicas: 1
   selector:
     matchLabels:
       app: app1
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app1-container
-        image: {{ .Values.image }}
+        image: busybox:latest
         env:
         - name: MQTT_SERVER
           value: mosquitto.mosquitto.svc.cluster.local
