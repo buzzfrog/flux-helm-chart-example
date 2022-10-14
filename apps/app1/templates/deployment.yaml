@@ -21,7 +21,7 @@ spec:
         - name: MQTT_SERVER
           value: "mosquitto.mosquitto.svc.cluster.local"
         - name: MQTT_PORT
-          value: {{ .Values.env.MqttPort }}
+          value: "{{ .Values.env.MqttPort }}"
         command:
           - sleep
           - "99999"
