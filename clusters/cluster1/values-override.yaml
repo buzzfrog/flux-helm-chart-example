@@ -2,7 +2,7 @@ replica: 1
 image: busybox:1.43
 env:
   MqttServer: mosquitto.mosquitto.svc.cluster.local
-  MqttPort: 1883
+  MqttPort: "1883"
 config:
   host:
   environment:
