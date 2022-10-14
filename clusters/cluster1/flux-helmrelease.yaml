@@ -5,7 +5,7 @@ metadata:
   namespace: app1-ns
 spec:
   releaseName: app1-v1
-  targetNamespace: apps
+  targetNamespace: app1-ns
   chart:
     spec:
       chart: ../../apps/app1
@@ -17,7 +17,6 @@ spec:
   upgrade:
     force: true
   install:
-    createNamespace: true
     remediation:
       retries: 3
   valuesFrom:

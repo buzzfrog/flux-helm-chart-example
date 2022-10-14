@@ -1,7 +1,8 @@
 #!/bin/sh
 set -o errexit
 
-kind create cluster
+kind delete cluster --name flux-helm
+kind create cluster --name flux-helm
 
 flux install
 
