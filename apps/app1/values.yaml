@@ -1,11 +1,11 @@
-replica: 1
-image: busybox:latest
+replica: "1"
+image: "busybox:latest"
 env:
-  MqttServer: mosquitto.mosquitto.svc.cluster.local
+  MqttServer: "mosquitto.mosquitto.svc.cluster.local"
   MqttPort: "1883"
 config:
   host:
   environment:
-  application: moonshot-sample 
+  application: "moonshot-sample" 
   version: "1.1"
-  module: input
+  module: "input"
