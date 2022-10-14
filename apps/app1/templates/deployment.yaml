@@ -22,6 +22,9 @@ spec:
           value: "mosquitto.mosquitto.svc.cluster.local"
         - name: MQTT_PORT
           value: "1883"
+        command:
+          - sleep
+          - "99999"
         volumeMounts:
         - mountPath: /etc/daytona
           name: app1-config
