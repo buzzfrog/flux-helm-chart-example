@@ -10,5 +10,5 @@ configMapGenerator:
   - name: app1-config-values
     files:
       - values.yaml=values-override.yaml
-configurations:
-  - kustomizeconfig.yaml
+# configurations:
+#   - kustomizeconfig.yaml
