@@ -4,8 +4,8 @@ env:
   MqttServer: "mosquitto.mosquitto.svc.cluster.local"
   MqttPort: "1883"
 config:
-  host:
-  environment:
+  host: ""
+  environment: ""
   application: "moonshot-sample" 
   version: "1.2"
   module: "input"
