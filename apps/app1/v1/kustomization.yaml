@@ -1,2 +1,5 @@
 resources:
   - flux-helmrelease.yaml
+  - namespace.yaml
+
+namespace: app1-ns
