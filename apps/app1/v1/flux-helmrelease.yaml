@@ -17,6 +17,7 @@ spec:
   upgrade:
     force: true
   install:
+    createNamespace: true
     remediation:
       retries: 3
   valuesFrom:
