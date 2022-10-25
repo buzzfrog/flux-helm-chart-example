@@ -8,11 +8,10 @@ namespace: app1-ns
 
 # https://fluxcd.io/flux/guides/helmreleases/#refer-to-values-in-configmaps-generated-with-kustomize
 configMapGenerator:
-  - name: app1-config-values
+  - name: app1-config-values-1
     files:
       - values.yaml=values-override.yaml
-  - name: app1-config-values
-    behavior: merge
+  - name: app1-config-values-2
     files:
       - values.yaml=values-override2.yaml
 
