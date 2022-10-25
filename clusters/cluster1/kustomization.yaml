@@ -10,7 +10,7 @@ namespace: app1-ns
 configMapGenerator:
   - name: app1-config-values-1
     files:
-      - values.yaml=values-override.yaml
+      - values.yaml=values-override1.yaml
   - name: app1-config-values-2
     files:
       - values.yaml=values-override2.yaml
