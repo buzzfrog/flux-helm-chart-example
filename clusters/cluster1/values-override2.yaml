@@ -1,1 +1,1 @@
-hello: "world"
+image: "busybox:1.34"

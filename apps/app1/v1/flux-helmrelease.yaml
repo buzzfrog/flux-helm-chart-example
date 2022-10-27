@@ -23,5 +23,3 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: app1-config-values-1
-    - kind: ConfigMap
-      name: app1-config-values-2
