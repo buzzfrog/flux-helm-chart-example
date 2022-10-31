@@ -22,4 +22,6 @@ spec:
       retries: 3
   valuesFrom:
     - kind: ConfigMap
-      name: app1-config-values-1
+      name: app1-line-config-values
+    - kind: ConfigMap
+      name: app1-singleton-config-values
