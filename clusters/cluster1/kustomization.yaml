@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - ../../apps/app1/v1
+  - namespace.yaml
 
 namespace: app1-ns
 
