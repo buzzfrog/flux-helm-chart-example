@@ -2,13 +2,13 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: app1-helmrelease
-  namespace: default
+  namespace: app1-ns
 spec:
   releaseName: app1-v1
   targetNamespace: app1-ns
   chart:
     spec:
-      chart: ../../apps/app1/v1/chart
+      chart: ../../apps/app1/v1/chart 
       sourceRef:
         kind: GitRepository
         name: git-buzzfrog
@@ -16,6 +16,10 @@ spec:
   interval: 30s
   upgrade:
     force: true
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
   valuesFrom:
     - kind: ConfigMap
       name: app1-config-values-1
