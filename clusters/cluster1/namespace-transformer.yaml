@@ -2,7 +2,7 @@ apiVersion: builtin
 kind: NamespaceTransformer
 metadata:
   name: not-important-to-example
-  namespace: test
+  namespace: app1-ns
 setRoleBindingSubjects: none
 unsetOnly: true
 fieldSpecs:
