@@ -85,23 +85,25 @@ GITEA_IP_FULL_SSH=$(kubectl get endpoints gitea-ssh -n gitea -o jsonpath='{.subs
 
 flux install
 
+kubectl create namespace flux-workspace
+
 flux create secret git repository-auth \
     --url=ssh://git@localhost:23/gitea-admin/source-repository \
     --private-key-file=$HOME/.ssh/id_rsa --export \
-    --namespace default \
+    --namespace flux-workspace \
     | sed 's/localhost/'${GITEA_IP_SSH}'/' \
     | kubectl apply -f -
 
 flux create source git source-repository \
     --url="ssh://git@${GITEA_IP_FULL_SSH}/gitea-admin/source-repository" \
     --secret-ref repository-auth \
-    --namespace default \
+    --namespace flux-workspace \
     --branch=${SOURCE_BRANCH} \
     --interval=1m
 
 flux create kustomization cluster \
     --path=${KUSTOMIZE_FOLDER} \
     --source=source-repository \
-    --namespace default \
+    --namespace flux-workspace \
     --prune=true \
     --interval=1m
