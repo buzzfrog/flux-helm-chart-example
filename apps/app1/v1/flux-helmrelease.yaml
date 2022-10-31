@@ -11,8 +11,8 @@ spec:
       chart: ../../apps/app1/v1/chart 
       sourceRef:
         kind: GitRepository
-        name: git-buzzfrog
-        namespace: default
+        name: source-repository
+        namespace: flux-workspace
   interval: 30s
   upgrade:
     force: true
