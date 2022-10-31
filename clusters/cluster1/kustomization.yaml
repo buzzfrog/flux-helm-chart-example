@@ -4,8 +4,7 @@ kind: Kustomization
 resources:
   - ../../apps/app1/v1
   - namespace.yaml
-
-namespace: app1-ns
+  - namespace-transformer.yaml
 
 # https://fluxcd.io/flux/guides/helmreleases/#refer-to-values-in-configmaps-generated-with-kustomize
 configMapGenerator:
