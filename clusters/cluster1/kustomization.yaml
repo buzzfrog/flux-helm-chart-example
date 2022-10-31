@@ -15,9 +15,9 @@ configMapGenerator:
   - name: app1-line-config-values
     files:
       - values.yaml=app1-line-config-values.yaml
-  - name: app1-cluster-config-values
-    files:
-      - values.yaml=app1-cluster-config-values.yaml
+  # - name: app1-cluster-config-values
+  #   files:
+  #     - values.yaml=app1-cluster-config-values.yaml
 
 configurations:
   - kustomizeconfig.yaml
