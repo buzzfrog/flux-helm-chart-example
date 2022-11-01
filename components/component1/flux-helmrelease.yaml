@@ -14,3 +14,6 @@ spec:
   interval: 30s
   upgrade:
     force: true
+  install:
+    remediation:
+      retries: 3

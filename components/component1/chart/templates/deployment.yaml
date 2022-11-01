@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1-deployment
+  name: component1-deployment
   labels:
-    app: app1
+    app: component1
 spec:
   replicas: {{ .Values.replica }}
   selector:
     matchLabels:
-      app: app1
+      app: component1
   template:
     metadata:
       labels:
-        app: app1
+        app: component1
     spec:
       containers:
-      - name: app1-container
+      - name: component1-container
         image: "{{ .Values.image }}"
         env:
         - name: MQTT_SERVER
@@ -25,10 +25,3 @@ spec:
         command:
           - sleep
           - "99999"
-        volumeMounts:
-        - mountPath: /etc/daytona
-          name: app1-config
-      volumes:
-      - name: app1-config
-        configMap:
-          name: config-configmap
