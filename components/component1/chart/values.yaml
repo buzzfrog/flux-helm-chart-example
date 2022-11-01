@@ -1,0 +1,5 @@
+replica: "1"
+image: "busybox:latest"
+env:
+  MqttServer: "mosquitto.mosquitto.svc.cluster.local"
+  MqttPort: "1883"

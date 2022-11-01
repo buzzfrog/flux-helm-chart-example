@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: component1-helmrelease
+spec:
+  releaseName: component1-v1
+  chart:
+    spec:
+      chart: ./components/component1/chart 
+      sourceRef:
+        kind: GitRepository
+        name: source-repository
+        namespace: flux-workspace
+  interval: 30s
+  upgrade:
+    force: true

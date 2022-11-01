@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-configmap
+data:
+  config: |
+    {
+      "host": "{{ .Values.config.host }}", 
+      "environment": "{{ .Values.config.environment }}",
+      "application": "{{ .Values.config.application }}",
+      "version": "{{ .Values.config.version }}",
+      "module": "{{ .Values.config.input }}"
+    }
