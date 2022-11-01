@@ -19,7 +19,7 @@ fatal()
 
 SOURCE_REPO=https://github.com/buzzfrog/flux-helm-chart-example
 SOURCE_BRANCH=main
-KUSTOMIZE_FOLDER=./clusters/cluster1
+KUSTOMIZE_FOLDER=./clusters/cluster1/app1
 while getopts u:p:b:i:a: flag
 do
     case "${flag}" in
