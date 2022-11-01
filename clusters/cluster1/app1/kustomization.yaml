@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - ../../../apps/app1/v1
+  - ../config
   - namespace.yaml
 
 namespace: app1-ns
@@ -15,9 +16,6 @@ configMapGenerator:
   - name: app1-line-config-values
     files:
       - values.yaml=app1-line-config-values.yaml
-  - name: app1-cluster-config-values
-    files:
-      - values.yaml=app1-cluster-config-values.yaml
 
 configurations:
   - kustomizeconfig.yaml
