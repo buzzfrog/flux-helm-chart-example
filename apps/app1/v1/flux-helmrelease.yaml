@@ -8,11 +8,11 @@ spec:
   targetNamespace: app1-ns
   chart:
     spec:
-      chart: ../../apps/app1/v1/chart 
+      chart: ./apps/app1/v1/chart 
       sourceRef:
         kind: GitRepository
-        name: git-buzzfrog
-        namespace: default
+        name: source-repository
+        namespace: flux-workspace
   interval: 30s
   upgrade:
     force: true
@@ -20,6 +20,12 @@ spec:
     createNamespace: true
     remediation:
       retries: 3
+  values: 
+    none: none
   valuesFrom:
     - kind: ConfigMap
-      name: app1-config-values-1
+      name: app1-config-values
+    - kind: ConfigMap
+      name: app1-line-config-values
+    - kind: ConfigMap
+      name: app1-cluster-config-values

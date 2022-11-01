@@ -1,0 +1,35 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../../apps/app1/v1
+  - ../config
+  - namespace.yaml
+
+namespace: app1-ns
+
+# https://fluxcd.io/flux/guides/helmreleases/#refer-to-values-in-configmaps-generated-with-kustomize
+configMapGenerator:
+  - name: app1-config-values
+    files:
+      - values.yaml=app1-config-values.yaml
+  - name: app1-line-config-values
+    files:
+      - values.yaml=app1-line-config-values.yaml
+
+configurations:
+  - kustomizeconfig.yaml
+
+patchesJson6902:
+- target:
+    kind: HelmRelease
+    name: app1-helmrelease
+    version: v2beta1
+  patch: |-
+    - op: add
+      path: /spec/values/replica
+      value: 5
+
+
+     
+
