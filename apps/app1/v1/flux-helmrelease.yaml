@@ -20,6 +20,8 @@ spec:
     createNamespace: true
     remediation:
       retries: 3
+  values: 
+    none: none
   valuesFrom:
     - kind: ConfigMap
       name: app1-config-values

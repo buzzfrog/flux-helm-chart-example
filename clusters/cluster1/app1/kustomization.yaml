@@ -19,3 +19,16 @@ configMapGenerator:
 
 configurations:
   - kustomizeconfig.yaml
+
+patchesJson6902:
+- target:
+    kind: HelmRelease
+    name: app1-helmrelease
+  patch: |-
+    - op: add
+      path: /spec/values/replica
+      value: 5
+
+
+     
+
