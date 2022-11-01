@@ -29,3 +29,5 @@ spec:
       name: app1-line-config-values
     - kind: ConfigMap
       name: app1-cluster-config-values
+  dependsOn:
+    - name: component1-helmrelease
