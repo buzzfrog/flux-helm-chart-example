@@ -24,6 +24,7 @@ patchesJson6902:
 - target:
     kind: HelmRelease
     name: app1-helmrelease
+    version: v2beta1
   patch: |-
     - op: add
       path: /spec/values/replica
